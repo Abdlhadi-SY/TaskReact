@@ -1,0 +1,114 @@
+.reg-log{
+    border-radius: 12px;
+    box-shadow: 0 0 15px 10px #ff5b1b;
+    padding: 10px;
+}
+.addItem .half{
+    width: 50%;
+    margin-top: 10px;
+}
+
+@media (max-width:768px) {
+    .addItem .half{
+        width: 100%;
+    }
+}
+.reg-log .half h1{
+    width: fit-content;
+    margin: 5px auto;
+    color: #FA5A1D;
+    text-align: center;
+}
+
+
+.reg-log .half > div,
+.addItem .half > div{
+    margin-block: 25px;
+    position: relative;
+}
+.reg-log .half div label,
+.reg-log .half div input,
+.addItem .half div label,
+.addItem .half div input{
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 3px solid transparent;
+}
+.reg-log .half div input,
+.addItem .half div input{
+    box-shadow: 0 0 10px rgb(199, 195, 195) inset;
+    padding: 12px 10px;
+    border-radius: 4px;
+
+}
+.reg-log .half div input:focus:valid{
+    border-bottom: 3px solid green;
+}
+.reg-log .half div input:focus:not(:valid){
+    border-bottom: 3px solid red;
+}
+.addItem .half div input:focus:valid{
+    border-bottom: 3px solid green;
+}
+.addItem .half div input:focus:not(:valid){
+    border-bottom: 3px solid red;
+}
+.reg-log .half div label,
+.addItem .half div label{
+    font-size: 16px;
+    font-weight: bold;
+    visibility: hidden;
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
+    top:0;
+}
+.reg-log .half div label{
+    color: #FA5A1D;
+}
+.addItem .half div label{
+    color: #FA5A1D;
+}
+.reg-log .half div input:not(:placeholder-shown) + label,
+.addItem .half div input:not(:placeholder-shown) + label{
+    visibility: visible;
+    top: -26px;
+    opacity: 1;
+}
+.reg-log button,
+.addItem button,
+.go-reg-log,
+.gohome{
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+    color: white;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.reg-log button,
+.go-reg-log{
+    background-color: #FA5A1D;
+}
+.addItem button,
+.gohome{
+    background-color: #FA5A1D;
+}
+.reg-log button:hover,
+.go-reg-log:hover{
+    background-color: #c94c1b;
+}
+.addItem button:hover{
+    background-color: #FA5A1D;
+
+}
+@media (max-width: 768px) {
+    .reg-log .half{
+        width: 100%;
+    }
+}
