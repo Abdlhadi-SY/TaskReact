@@ -35,7 +35,7 @@ export default function Topbar(){
     return (
     <div className="top-bar">
         <div className="top-l">
-        <p style={{color:"#FA5A1D" ,fontWeight:"bold",fontSize:"20px",margin:"0"}}>Restaurant</p>
+        <p style={{color:"#FA5A1D" ,fontWeight:"bold",fontSize:"20px",margin:"0"}}>Tasks</p>
         <FontAwesomeIcon onClick={()=>menu.setopen((prev)=>!prev)} cursor={"pointer"} icon={faBars} style={{color:"white"}} ></FontAwesomeIcon>
         </div>
         <div>

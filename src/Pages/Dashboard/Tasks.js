@@ -80,6 +80,18 @@ export default function Tasks(){
       console.log(e.message);
     }
     };
+    function deleteTask(id){
+      try{
+        axios.delete(`${baseUrl}/api/deleteTask/${id}`,{
+          headers:{
+            Authorization:"Bearer "+  token
+          },
+        })
+        .then(()=>setItem((pre)=>!pre))
+    }catch(e){
+      console.log(e.message);
+    }
+  }
     
     const totalPagesforall = Math.ceil(totalTasks.allTask / 10);
     const totalPagesforpending = Math.ceil(totalTasks.pending / 10);
@@ -180,12 +192,14 @@ export default function Tasks(){
                           <button onClick={()=>{setcompleteId(task.id);setshow(true)}} className="butt-item" style={{background:"green"}}>Done</button>
                           <button onClick={()=>updateStatus("in_progress",task.id)} className="butt-item" style={{background:"#35C3BC"}}>InProgress</button>
                           <Link to={`${task.id}`}><button onClick={()=>updateStatus("in_progress",task.id)} className="butt-item" style={{background:"#693649ff"}}>Update</button></Link>
+                          <button onClick={()=>deleteTask(task.id)} className="butt-item" style={{background:"red"}}>Delete</button>
                           </>:
                           status==="in_progress"?
                           <> 
                           <button onClick={()=>updateStatus("pending",task.id)} className="butt-item" style={{background:"#FA5A1D"}}>Pending</button>
                           <button onClick={()=>{setcompleteId(task.id);setshow(true)}} className="butt-item" style={{background:"green"}}>Done</button>
                           <Link to={`${task.id}`}><button onClick={()=>updateStatus("in_progress",task.id)} className="butt-item" style={{background:"#693649ff"}}>Update</button></Link>
+                          <button onClick={()=>deleteTask(task.id)} className="butt-item" style={{background:"red"}}>Delete</button>
                           </>:
                           ""
                         }

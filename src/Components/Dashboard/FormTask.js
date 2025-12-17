@@ -32,10 +32,7 @@ export default function FormTask({header="AddTask",end="addTask",task}){
     } catch (err) {
       console.log(err)
       setload(false);
-      if(err.status===500)
-        seterr("Task is already been taken");
-      else
-        seterr(err.response.data.message);
+      seterr(err.response.data.message);
     }
   }
   return (
